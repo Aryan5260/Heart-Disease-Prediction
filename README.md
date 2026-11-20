@@ -110,51 +110,6 @@ Heart-Disease-Prediction/
 ## ⚠️ Disclaimer
 This project is intended for educational and machine learning practice purposes only. It is not intended for medical diagnosis, treatment, or clinical decision-making.
 
----
-Developed as a Machine Learning and Data Analysis project.
-```
 
----
-
-## Before you upload the README: 2 things I'd fix
-
-I noticed two things in your notebook that are worth correcting before you eventually showcase this project to recruiters.
-
-**1. Your test scaler is being fitted independently.**
-
-In your notebook, you have:
-
-```python
-x_train_scaled = scaler.fit_transform(x_train)
-x_test_scaled = scaler.fit_transform(x_test)
-```
-
-The second line should ideally be:
-
-```python
-x_test_scaled = scaler.transform(x_test)
-```
-
-Otherwise, you're fitting a separate scaler on the test data instead of using the training data's scaling parameters.
-
-**2. Your saved scaler isn't the training scaler.**
-
-Because you fit the scaler again on the test data, the `scaler.pkl` you export at the end is fitted on the test set, not the training set.
-
-This matters if you later use the saved model in a web application.
-
----
-
-## Now, add the README to GitHub
-
-1. Open your **Heart-Disease-Prediction** repository.
-2. Click **Add file → Create new file**.
-3. In the filename box, type `README.md`.
-4. Paste the README above.
-5. Scroll down to **Commit changes**.
-6. Commit message: `Add project documentation`.
-7. Click **Commit changes**.
-
-**One more thing:** Don't upload the `.pkl` files yet unless you've actually generated and tested them. Your notebook is sufficient for the initial GitHub upload.
 
 Once you have the notebook and README on GitHub, we can make this repository genuinely internship-ready without unnecessarily complicating it.
